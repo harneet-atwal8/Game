@@ -230,6 +230,21 @@ elif game==3:
         exit=int(input())
         if exit==8:
             break
-#answer not known 
+        elif exit==7:
+            random.shuffle(movies)
+            b= [x for x in movies if x.startswith(mv[-1])]
+            if len(b)==0:
+                print("\033[1;36mI dont think many movies start with that alphabet, lets change the alphabet")
+                su=random.choice(string.ascii_letters)
+                print("\033[1;36mSo the alphabet  is \n{} ".format(su))
+                b= [x for x in movies if x.startswith(su)]                
+    
+            num=random.randrange(0,len(b))
+            c=b[num]
+            mv=""
+            for ele in c:
+                mv=mv+ele 
+            print("\033[1;31mSo my answer to this alphabet would be \n{} ".format(mv))
+            print("\033[1;35mNow you tell a movie name with \n{} alphabet".format(mv[-1])) 
         elif exit==9:
             continue
