@@ -18,7 +18,38 @@ sample=[{"SHERSHAH":["_","_","E","_","_","_","A","_"]},
         {"JAI HO":["_","A","I"," ","_","O"]},
         {"READY":["_","E","A","_","_"]},
         {"HERO":["_","E","_","O"]},
-        {"GARV":["_","A","_","_"]}]
+        {"GARV":["_","A","_","_"]},
+        {"LAGAAN":["_","A","_","A","A","_"]},
+        {"CHALTE CHALTE":["_","_","A","_","_","E"," ","_","_","A","_","_","E"]},
+        {"DHADKAN":["_","_","A","_","_","A","_"]},
+        {"GULLY BOY":["_","U","_","_","_"," ","_","O","_"]},
+        {"KOI MIL GAYA":["_","O","I"," ","_","I","_"," ","_","A","_","A"]},
+        {"KABIR SINGH":["_","A","_","I","_"," ","_","I","_","_","_"]},
+        {"BAGHBAN":["_","A","_","_","_","A","_"]},
+        {"BAJIRAO MASTANI":["_","A","_","I","_","A","O"," ","_","A","_","_","A","_","I"]},
+        {"VEER":["_","E","E","_"]},
+        {"HUM SAATH SAATH HAIN":["_","U","_"," ","_","A","A","_","_"," ","_","A","A","_","_"," ","_","A","I","_"]},
+        {"DILWALE":["_","I","_","_","A","_","E"]},
+        {"RAJA HINDUSTANI":["_","A","_","A"," ","_","I","_","_","U","_","_","A","_","I"]},
+        {"WAR":["_","A","_"]},
+        {"HUM DIL DE CHUKE SANAM":["_","U","_"," ","_","I","_"," ","_","E"," ","_","_","U","_","E"," ","_","A","_","A","_"]},
+        {"HUM AAPKE HAI KOUN":["_","U","_"," ","A","A","_","_","E"," ","_","A","I"," ","_","O","U","_"]},
+        {"RAEES":["_","A","E","E","_"]},
+        {"DIL TO PAGAL HAI":["_","I","_"," ","_","O"," ","_","A","_","A","_"," ","_","A","I"]},
+        {"TIGER ZINDA HAI":["_","I","_","E","_"," ","_","I","_","_","A"," ","_","A","I"]},
+        {"CHHICHHORE":["_","_","_","I","_","_","_","O","_","E"]},
+        {"LAAL SINGH CHADDHA":["_","A","A","_"," ","_","I","_","_","_"," ","_","_","A","_","_","_","A"]},
+        {"DILJALE":["_","I","_","_","A","_","E"]},
+        {"SANAM TERI KASAM":["_","A","_","A","_"," ","_","E","_","I"," ","_","A","_","A","_"]},
+        {"RAM SETU":["_","A","_"," ","_","E","_","U"]},
+        {"AE DIL HAI MUSHKIL":["A","E"," ","_","I","_"," ","_","A","I"," ","_","U","_","_","_","I","_"]},
+        {"SOORYAVANSHI":["_","O","O","_","_","A","_","A","_","_","_","I"]},
+        {"BADHAAI HO":["_","A","_","_","A","A","I"," ","_","O"]},
+        {"PREM RATAN DHAN PAYO":["_","_","E","_"," ","_","A","_","A","_"," ","_","_","A","_"," ","_","A","_","O"]},
+        {"DANGAL":["_","A","_","_","A","_"]},
+        {"LOVE AAJ KAL":["_","O","_","E"," ","A",'A',"_"," ","_","A","_"]},
+        {"DRISHYAM":["_","_","I","_","_","_","A","_"]},
+        {"HALF GIRLFRIEND":["_","A","_","_"," ","_","I","_","_","_","_","I","E","_"]}]
 songs=[{"The heart wants that the bright days never ever pass, the heart wantsthat we should never be without friends.":["1 dil diyan gallan","2 Aae dil hai mushkil","3 dil to pagal hai","2 ae dil hai mushkil"]},
        {"Sun came out,some mercury had melted,there was a storm,when my heart sighed":["1 dil se re","2 dilwale","3 dil chahta hai" ,"3 dil chahta hai"]},
        {"This boy is crazy ,O Allah,how difficult it is to explain to him,that slowly the heart becomes desperate , that is love ":["1 ladka bada anjana hai","2 yeh ladka hai allah","3 ladki pagal hai","2 yeh ladka hai allah"]},
@@ -92,7 +123,16 @@ if game==1:
             if a=="A" or a=="E"or a=="I" or a=="O" or a=="U":
                 print("\033[1;35mC'mon its a vowel , if it was in the movie we would have already given , why are you wasting a chance ")
                     
-#IF MOVIE GUESSED CORRECTLY
+            if k==s+5:
+                if i !=("".join(str(ele) for ele in j)):
+                    print("\033[1;33mOH NOOO!!! You ran out of chances , well maybe its just not your day\nBETTER LUCK NEXT TIME :)  ")
+                    print("\033[1;36mWell your final answer was {} which is not correct ".format("".join(str(ele) for ele in j)))
+                    print("\033[1;33mThe correct answer was {} ".format(i))
+                    chances=chances-1
+                    if chances>1:
+                        print("\033[1;36mWell now gear up for the next one now \nbut you are now left with {} lives only ".format(chances))
+                    elif chances==1:
+                        print("\033[1;36mThis is your last life, guess correctly ")
             if i ==("".join(str(ele) for ele in j)):
                 print("\033[1;32mYes the correct movie was {} ".format(i))
                 points=points+10
@@ -137,7 +177,12 @@ elif game==3:
     strings=""
     for ele in p:
         strings=strings+ele
-#adding the interface 
+    print("\033[1;34mThis is {} \nAnd I am going to play this  game with you \nSo are you ready to have a tough battle with me".format(strings))
+    sleep(2)
+    print("\033[1;31mSo this game is basically based on your knowledge of movies\nAn alphabet will be given to you and you have to think of a movie with that alphabet")
+    sleep(4)
+    print("\033[1;32mThen return the last alphabet of the movie you thought and i will give the movie for that alphabet \nThen think of a next movie with the last alphabet of the movie i return")
+    sleep(4)
     wer=random.choice(string.ascii_letters)
     wer=wer.lower()
     print("\033[1;36mSo let's start the game, So start with the alphabet \n{} ".format(wer))
